@@ -14,12 +14,12 @@ class CreateSelectedTable extends Migration
     public function up()
     {
         Schema::create('selected', function (Blueprint $table) {
-            $table->increments('id')->primary();
+            $table->id();
             $table->integer('user_id');
             $table->integer('movie_id');
-            $table->float('rate', 2);
+            $table->float('rate');
             $table->string('comments', 500);
-            
+
             $table->timestamps();
         });
     }

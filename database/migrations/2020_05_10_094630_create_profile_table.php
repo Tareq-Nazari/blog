@@ -14,12 +14,12 @@ class CreateProfileTable extends Migration
     public function up()
     {
         Schema::create('profile', function (Blueprint $table) {
-            $table->increments('id')->primary();
-            $table->string('fname','20');
-            $table->string('lname','20');
-            $table->integer('user_id',15);
-            $table->integer('phone',15);
-            $table->integer('rule_id',15);
+            $table->id();
+            $table->string('fname',20);
+            $table->string('lname',20);
+            $table->integer('user_id');
+            $table->integer('phone');
+            $table->integer('rule_id');
             $table->timestamps();
         });
     }
