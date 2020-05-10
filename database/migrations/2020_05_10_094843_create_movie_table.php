@@ -14,18 +14,18 @@ class CreateMovieTable extends Migration
     public function up()
     {
         Schema::create('movie', function (Blueprint $table) {
-            $table->increments('id')->primary();
+            $table->id();
             $table->string('name',20);
             $table->string('janre',80);
             $table->string('language',20);
             $table->string('product',40);
-            $table->float('rate',2);
+            $table->float('rate');
             $table->string('director',20);
             $table->string('actors',100);
             $table->string('summary',10000);
             $table->string('trailler',250);
             $table->string('image',250);
-            $table->integer('p_year',4);
+            $table->integer('p_year');
             $table->timestamps();
         });
     }
