@@ -1,79 +1,148 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Restaurant Management System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+A comprehensive restaurant management system built with Laravel that includes CMS functionality and advanced analytics.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 🏪 Restaurant Management
+- Multi-restaurant support
+- Menu and category management
+- Staff management with role-based permissions
+- Table management and reservations
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 📋 Order Management
+- Real-time order processing
+- Kitchen display system
+- Order tracking and history
+- Payment integration
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 👥 Customer Management
+- Customer profiles and preferences
+- Loyalty program integration
+- Order history and analytics
 
-## Learning Laravel
+### 📊 Analytics Dashboard
+- Sales analytics and reporting
+- Performance metrics
+- Popular items analysis
+- Revenue tracking
+- Real-time dashboard updates
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🔧 CMS Features
+- Dynamic content management
+- Menu item management
+- Staff role management
+- Restaurant settings configuration
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🔐 Authentication & Authorization
+- Multi-role authentication (Admin, Manager, Staff, Customer)
+- Role-based permissions using Spatie Laravel Permission
+- Secure API authentication with Laravel Sanctum
 
-## Laravel Sponsors
+### 📱 API Integration
+- RESTful API for mobile app integration
+- Real-time updates using WebSockets
+- Third-party service integrations
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Technology Stack
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+- **Backend**: Laravel 10.x
+- **Authentication**: Laravel Sanctum + Spatie Permission
+- **Database**: MySQL/PostgreSQL
+- **Real-time**: Laravel WebSockets
+- **File Management**: Intervention Image
+- **Export/Import**: Maatwebsite Excel
+- **PDF Generation**: DomPDF
+- **Data Tables**: Yajra DataTables
 
-## Contributing
+## Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd restaurant-management-system
+```
 
-## Code of Conduct
+2. Install dependencies
+```bash
+composer install
+npm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. Configure environment
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+4. Set up database
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. Install Laravel UI for authentication scaffolding
+```bash
+php artisan ui bootstrap --auth
+npm run dev
+```
+
+6. Start the development server
+```bash
+php artisan serve
+```
+
+## Configuration
+
+### Database Configuration
+Update your `.env` file with your database credentials:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=restaurant_management
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+### Real-time Features
+Configure WebSocket settings in `.env`:
+```
+BROADCAST_DRIVER=pusher
+PUSHER_APP_ID=your-app-id
+PUSHER_APP_KEY=your-app-key
+PUSHER_APP_SECRET=your-app-secret
+PUSHER_APP_CLUSTER=your-cluster
+```
+
+## Default Users
+
+After running the seeders, you can login with:
+
+**Admin User:**
+- Email: admin@restaurant.com
+- Password: password
+
+**Manager User:**
+- Email: manager@restaurant.com
+- Password: password
+
+**Staff User:**
+- Email: staff@restaurant.com
+- Password: password
+
+## API Documentation
+
+API endpoints are available at `/api/` with the following main routes:
+- `/api/restaurants` - Restaurant management
+- `/api/menus` - Menu management
+- `/api/orders` - Order processing
+- `/api/analytics` - Analytics data
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License.
+
+## Support
+
+For support and questions, please contact the development team.
